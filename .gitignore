@@ -1,0 +1,13 @@
+# Archivos temporales y de compilación
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+*.FileListAbsolute
+
+# Paquetes y configuraciones
+packages/
+*.nupkg
+*.DS_Store

@@ -16,7 +16,7 @@ namespace AccountsSupportV1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IMAP());
+            Application.Run(new Home());
         }
     }
 }

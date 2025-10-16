@@ -21,12 +21,19 @@ namespace AccountsSupportV1
         {
             IMAP IMAP = new IMAP();
             IMAP.Show();
+            this.Hide();
         }
 
         private void buttonRecibirOpc_Click(object sender, EventArgs e)
         {
             SMTP SMTP = new SMTP();
             SMTP.Show();
+            this.Hide();   
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

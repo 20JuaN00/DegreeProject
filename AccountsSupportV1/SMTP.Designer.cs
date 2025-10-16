@@ -34,6 +34,7 @@
             this.textDestinatario = new System.Windows.Forms.TextBox();
             this.textAsunto = new System.Windows.Forms.TextBox();
             this.textCuerpo = new System.Windows.Forms.TextBox();
+            this.buttonEnviarSMTP = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.textDestinatario.Name = "textDestinatario";
             this.textDestinatario.Size = new System.Drawing.Size(254, 22);
             this.textDestinatario.TabIndex = 3;
+            this.textDestinatario.TextChanged += new System.EventHandler(this.textDestinatario_TextChanged);
             // 
             // textAsunto
             // 
@@ -77,6 +79,7 @@
             this.textAsunto.Name = "textAsunto";
             this.textAsunto.Size = new System.Drawing.Size(254, 22);
             this.textAsunto.TabIndex = 4;
+            this.textAsunto.TextChanged += new System.EventHandler(this.textAsunto_TextChanged);
             // 
             // textCuerpo
             // 
@@ -85,14 +88,25 @@
             this.textCuerpo.Size = new System.Drawing.Size(254, 22);
             this.textCuerpo.TabIndex = 5;
             // 
+            // buttonEnviarSMTP
+            // 
+            this.buttonEnviarSMTP.Location = new System.Drawing.Point(350, 321);
+            this.buttonEnviarSMTP.Name = "buttonEnviarSMTP";
+            this.buttonEnviarSMTP.Size = new System.Drawing.Size(154, 29);
+            this.buttonEnviarSMTP.TabIndex = 6;
+            this.buttonEnviarSMTP.Text = "ENVIAR";
+            this.buttonEnviarSMTP.UseVisualStyleBackColor = true;
+            this.buttonEnviarSMTP.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(353, 342);
+            this.button1.Location = new System.Drawing.Point(387, 356);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "ENVIAR";
+            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SMTP
             // 
@@ -100,6 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonEnviarSMTP);
             this.Controls.Add(this.textCuerpo);
             this.Controls.Add(this.textAsunto);
             this.Controls.Add(this.textDestinatario);
@@ -121,6 +136,7 @@
         private System.Windows.Forms.TextBox textDestinatario;
         private System.Windows.Forms.TextBox textAsunto;
         private System.Windows.Forms.TextBox textCuerpo;
+        private System.Windows.Forms.Button buttonEnviarSMTP;
         private System.Windows.Forms.Button button1;
     }
 }
