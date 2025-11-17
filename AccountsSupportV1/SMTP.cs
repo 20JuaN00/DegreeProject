@@ -19,12 +19,13 @@ namespace AccountsSupportV1
         public SMTP()
         {
             InitializeComponent();
+            _mailSettings = new MailSettings();
             _mailFunctions = new MailFunctions(_mailSettings);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Enviar
+            //Enviar AcCion
             string destinatario =textDestinatario.Text?.Trim();
             string asunto = textAsunto.Text?.Trim();
             string cuerpo = textCuerpo.Text?.Trim();
@@ -40,7 +41,8 @@ namespace AccountsSupportV1
             button1.Enabled = false;
             try
             {
-                 _mailFunctions.SendMultipleEmails(recipients, asunto, cuerpo, 1);
+                _mailFunctions.SendMultipleEmails(recipients, asunto, cuerpo, 1);
+
                 MessageBox.Show("Correo enviado correctamente.");
             }
             catch (Exception ex)

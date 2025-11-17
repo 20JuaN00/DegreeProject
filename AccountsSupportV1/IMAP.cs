@@ -16,17 +16,12 @@ namespace AccountsSupportV1
     {
         
         private readonly MailFunctions _mailFunctions;
-        private readonly MailSettings _mailSettings = new MailSettings
-        {
-                       
-            
-            User = "tuemail@gmail.com",
-            Pass = "tu_contraseña_app"
-        };
+        private readonly MailSettings _mailSettings = new MailSettings();
 
         public IMAP()
         {
             InitializeComponent();
+            _mailSettings = new MailSettings();
             _mailFunctions = new MailFunctions(_mailSettings);
         }
 
@@ -42,7 +37,7 @@ namespace AccountsSupportV1
 
         private async Task function2(object sender, EventArgs e)
         {
-            MessageBox.Show("Correo leído correctamente SAPA.");
+            
 
             string usuario = textMail.Text?.Trim();
             string password = textPwd.Text?.Trim();
@@ -51,22 +46,35 @@ namespace AccountsSupportV1
                 MessageBox.Show("Por favor, ingresa usuario y contraseña.");
                 return;
             }
-            
 
-            button1.Enabled = false;
             try
             {
                 string subjectFilter = "código de acceso";
                 var cuerpoCorreo = await _mailFunctions.filteredEmail(subjectFilter.Trim());
 
-                textCode.Text=cuerpoCorreo.ToString();
+                if (cuerpoCorreo == null)
+                {
+                    MessageBox.Show("No se encontró ningún correo que coincida con el filtro.");
+                    return;
+                }
+
+                // Si el cuerpo tiene texto plano
+                if (!string.IsNullOrEmpty(cuerpoCorreo.TextBody))
+                    textCode.Text = cuerpoCorreo.TextBody;
+
+                else if (!string.IsNullOrEmpty(cuerpoCorreo.HtmlBody))
+                    textCode.Text = cuerpoCorreo.HtmlBody;
                 
+                else
+                    textCode.Text = "El correo no tiene contenido legible.";
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al leer correos: {ex.Message}");
             }
-            
+
+            MessageBox.Show("Correo leído correctamente SAPA.");
+
         }
 
         private void button1_Click(object sender, EventArgs e)

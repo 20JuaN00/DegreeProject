@@ -69,8 +69,10 @@
             // 
             this.textDestinatario.Location = new System.Drawing.Point(404, 86);
             this.textDestinatario.Name = "textDestinatario";
+            this.textDestinatario.ReadOnly = true;
             this.textDestinatario.Size = new System.Drawing.Size(254, 22);
             this.textDestinatario.TabIndex = 3;
+            this.textDestinatario.Text = "recepcion123.321@gmail.com";
             this.textDestinatario.TextChanged += new System.EventHandler(this.textDestinatario_TextChanged);
             // 
             // textAsunto

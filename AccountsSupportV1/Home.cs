@@ -19,16 +19,17 @@ namespace AccountsSupportV1
 
         private void buttonEnviarOpc_Click(object sender, EventArgs e)
         {
-            IMAP IMAP = new IMAP();
-            IMAP.Show();
+            SMTP SMTP = new SMTP();
+            SMTP.Show();
             this.Hide();
+            
         }
 
         private void buttonRecibirOpc_Click(object sender, EventArgs e)
         {
-            SMTP SMTP = new SMTP();
-            SMTP.Show();
-            this.Hide();   
+            IMAP IMAP = new IMAP();
+            IMAP.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
