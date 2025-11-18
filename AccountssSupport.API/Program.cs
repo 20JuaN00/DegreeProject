@@ -52,10 +52,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins(allowedOrigins)
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
+              .AllowAnyHeader();
     });
 });
 
@@ -79,7 +78,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // 3. CORS
-app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAll");
 
 // 4. Autorización
 app.UseAuthorization();
