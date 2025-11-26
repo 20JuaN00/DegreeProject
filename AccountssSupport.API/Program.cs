@@ -4,9 +4,7 @@ using AccountsSupport.Core.Mail.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ===== CONFIGURACIÓN DE SERVICIOS =====
 
-// 1. Configurar Settings_Mail desde appsettings.json
 builder.Services.AddSingleton(sp =>
 {
     var config = builder.Configuration.GetSection("MailSettings");
@@ -25,14 +23,11 @@ builder.Services.AddSingleton(sp =>
     };
 });
 
-// 2. Registrar servicios de negocio
 builder.Services.AddScoped<Interface_SMTP, Service_SMTP>();
 builder.Services.AddScoped<Interface_IMAP, Service_IMAP>();
 
-// 3. Agregar controladores
 builder.Services.AddControllers();
 
-// 4. Configurar Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -44,7 +39,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// 5. Configurar CORS
+
 var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
                      ?? new[] { "*" };
 
@@ -58,33 +53,23 @@ builder.Services.AddCors(options =>
     });
 });
 
-// ===== CONSTRUCCIÓN DE LA APP =====
 var app = builder.Build();
 
-// ===== CONFIGURACIÓN DEL PIPELINE =====
 
-// 1. Swagger (solo en desarrollo)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "AccountsSupport Mail API v1");
-        c.RoutePrefix = string.Empty; // Swagger en la raíz
+        c.RoutePrefix = string.Empty; 
     });
 }
 
-// 2. Redirección HTTPS
+app.UseCors("AllowSpecificOrigins");
+
 app.UseHttpsRedirection();
-
-// 3. CORS
-app.UseCors("AllowAll");
-
-// 4. Autorización
 app.UseAuthorization();
-
-// 5. Mapear controladores
 app.MapControllers();
 
-// ===== INICIAR LA APP =====
 app.Run();
