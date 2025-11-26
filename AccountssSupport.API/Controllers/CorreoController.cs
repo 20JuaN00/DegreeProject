@@ -23,11 +23,7 @@ namespace AccountsssSupport.API.Controllers
             _logger = logger;
         }
 
-        /// <summary>
-        /// Envía un correo electrónico
-        /// </summary>
-        /// <param name="request">Datos del correo a enviar</param>
-        /// <returns>Respuesta con el resultado del envío</returns>
+
         [HttpPost("enviar")]
         [ProducesResponseType(typeof(ApiResponse<DTO_SMTP_respuesta>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -101,11 +97,7 @@ namespace AccountsssSupport.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Obtiene correos filtrados por asunto
-        /// </summary>
-        /// <param name="filtro">Filtro de búsqueda por asunto</param>
-        /// <returns>Lista de correos que coinciden con el filtro</returns>
+        
         [HttpPost("recibir")]
         [ProducesResponseType(typeof(ApiResponse<List<EmailDetailResponse>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
@@ -181,11 +173,7 @@ namespace AccountsssSupport.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Obtiene el último correo que coincide con el asunto proporcionado
-        /// </summary>
-        /// <param name="request">Datos de búsqueda del último correo</param>
-        /// <returns>Detalles del último correo encontrado</returns>
+        
         [HttpPost("ultimo")]
         [ProducesResponseType(typeof(ApiResponse<EmailDetailResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
@@ -254,9 +242,7 @@ namespace AccountsssSupport.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Verifica el estado de la API
-        /// </summary>
+        
         [HttpGet("health")]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
         public IActionResult Health()

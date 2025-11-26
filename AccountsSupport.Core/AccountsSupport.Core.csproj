@@ -85,7 +85,6 @@
     <Compile Include="Mail\Model\DTO_SMTP_envio.cs" />
     <Compile Include="Mail\Servicios\Filter_IMAP.cs" />
     <Compile Include="Mail\Servicios\Service_IMAP.cs" />
-    <Compile Include="Mail\Servicios\Service_Mail.cs" />
     <Compile Include="Mail\Servicios\Service_SMTP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Settings_Mail.cs" />
