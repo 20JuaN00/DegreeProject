@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios", "Servicios\Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{928376FC-F7B0-4F44-AD24-7A4D7A7678EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{8BCFDCC0-0963-4B14-9DDA-C8813D6FE4CC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountsSupport.Core", "AccountsSupport.Core\AccountsSupport.Core.csproj", "{6B5959AE-7772-41A8-8C05-0E1E6666A6FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountssSupport.API", "AccountssSupport.API\AccountssSupport.API.csproj", "{DE4DB09A-B650-4E62-AD60-31C502E22F11}"
@@ -33,10 +31,6 @@ Global
 		{928376FC-F7B0-4F44-AD24-7A4D7A7678EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{928376FC-F7B0-4F44-AD24-7A4D7A7678EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{928376FC-F7B0-4F44-AD24-7A4D7A7678EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BCFDCC0-0963-4B14-9DDA-C8813D6FE4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BCFDCC0-0963-4B14-9DDA-C8813D6FE4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BCFDCC0-0963-4B14-9DDA-C8813D6FE4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BCFDCC0-0963-4B14-9DDA-C8813D6FE4CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B5959AE-7772-41A8-8C05-0E1E6666A6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B5959AE-7772-41A8-8C05-0E1E6666A6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5959AE-7772-41A8-8C05-0E1E6666A6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
